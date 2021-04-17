@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Documentation 
+
+https://www.notion.so/ReactTesting-Library-Jest-4db7c74a68c0432ca63ec2a4da16298e
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
