@@ -1,13 +1,21 @@
 import Options from "./Options";
 import { useOrderDetails } from "./../../contexts/OrderDetails";
-function OrderEntry() {
+import Button from "react-bootstrap/Button";
+
+function OrderEntry({ setOrderPhase }) {
   const [orderDetails] = useOrderDetails();
 
+  // disable order button if there aren't any scoops in order
+  const orderDisabled = orderDetails.totals.scoops === "$0.00";
   return (
     <div>
+      <h2>Select Your Sundae </h2>
       <Options optionType="scoops" />
       <Options optionType="toppings" />
       <h2>Grand total: {orderDetails.totals.grandTotal}</h2>
+      <Button disabled={orderDisabled} onClick={() => setOrderPhase("Review")}>
+        Order Sundae!
+      </Button>
     </div>
   );
 }
